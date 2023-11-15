@@ -16,16 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHv-9I-hWh">
-                                <rect key="frame" x="16" y="47" width="358" height="763"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vQA-hR-AgR">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-Z9-1C2">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="272"/>
+                                    </pickerView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yHv-9I-hWh">
+                                        <rect key="frame" x="0.0" y="272" width="390" height="491"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="491" id="kiM-lT-TyQ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vQA-hR-AgR" secondAttribute="trailing" id="2w1-yg-0ag"/>
+                            <constraint firstItem="vQA-hR-AgR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DCy-cK-e8L"/>
+                            <constraint firstItem="vQA-hR-AgR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hSW-Iu-zqr"/>
+                            <constraint firstItem="vQA-hR-AgR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xdJ-Sb-66b"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="dogImageView" destination="yHv-9I-hWh" id="sdD-b3-fNY"/>
+                        <outlet property="pickerView" destination="fR8-Z9-1C2" id="F1U-c1-EcM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
